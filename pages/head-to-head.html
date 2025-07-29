@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The ultimate head-to-head comparison between Peppa Pig and Eevee - Who will win this epic battle?">
+    <meta name="keywords" content="Peppa Pig vs Eevee, comparison, battle, head-to-head, funny analysis">
+    <title>Head-to-Head: Peppa Pig VS Eevee | The Ultimate Battle Analysis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'peppa-pink': '#FF69B4',
+                        'peppa-light': '#FFB6C1',
+                        'peppa-pale': '#FFC0CB',
+                        'eevee-brown': '#8B4513',
+                        'eevee-tan': '#D2B48C',
+                        'eevee-light': '#DEB887',
+                        'neutral-dark': '#2D3748',
+                        'neutral-medium': '#4A5568',
+                        'neutral-light': '#718096',
+                        'accent-blue': '#3182CE',
+                        'accent-teal': '#38B2AC'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'heading': ['Nunito', 'sans-serif']
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Animations -->
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes wiggle {
+            0%, 7%, 14%, 21%, 28%, 35%, 42%, 49%, 56%, 63%, 70%, 77%, 84%, 91%, 98%, 100% {
+                transform: rotate(0deg);
+            }
+            3.5%, 10.5%, 17.5%, 24.5%, 31.5%, 38.5%, 45.5%, 52.5%, 59.5%, 66.5%, 73.5%, 80.5%, 87.5%, 94.5% {
+                transform: rotate(2deg);
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #FF69B4, #8B4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .battle-glow {
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.3), 0 0 60px rgba(139, 69, 19, 0.3);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .winner-glow {
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-peppa-pale via-white to-eevee-light min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-heading font-bold gradient-text hover:scale-105 transition-transform">
+                        Peppa VS Eevee
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="text-neutral-dark hover:text-peppa-pink px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="peppa-profile.html" class="text-neutral-dark hover:text-peppa-pink px-3 py-2 rounded-md text-sm font-medium transition-colors">Peppa Profile</a>
+                        <a href="eevee-profile.html" class="text-neutral-dark hover:text-eevee-brown px-3 py-2 rounded-md text-sm font-medium transition-colors">Eevee Profile</a>
+                        <a href="head-to-head.html" class="bg-gradient-to-r from-peppa-pink to-eevee-brown text-white px-3 py-2 rounded-md text-sm font-medium">Head-to-Head</a>
+                        <a href="battle-simulator.html" class="text-neutral-dark hover:text-accent-teal px-3 py-2 rounded-md text-sm font-medium transition-colors">Battle</a>
+                        <a href="quiz.html" class="text-neutral-dark hover:text-peppa-pink px-3 py-2 rounded-md text-sm font-medium transition-colors">Quiz</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-neutral-dark hover:text-peppa-pink focus:outline-none focus:text-peppa-pink">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" class="text-neutral-dark hover:text-peppa-pink block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="peppa-profile.html" class="text-neutral-dark hover:text-peppa-pink block px-3 py-2 rounded-md text-base font-medium">Peppa Profile</a>
+                <a href="eevee-profile.html" class="text-neutral-dark hover:text-eevee-brown block px-3 py-2 rounded-md text-base font-medium">Eevee Profile</a>
+                <a href="head-to-head.html" class="bg-gradient-to-r from-peppa-pink to-eevee-brown text-white block px-3 py-2 rounded-md text-base font-medium">Head-to-Head</a>
+                <a href="battle-simulator.html" class="text-neutral-dark hover:text-accent-teal block px-3 py-2 rounded-md text-base font-medium">Battle</a>
+                <a href="quiz.html" class="text-neutral-dark hover:text-peppa-pink block px-3 py-2 rounded-md text-base font-medium">Quiz</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-16 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-heading font-bold text-neutral-dark mb-6">
+                        🥊 The Ultimate
+                        <span class="gradient-text block mt-2">HEAD-TO-HEAD BATTLE</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-neutral-medium mb-8 max-w-3xl mx-auto">
+                        It's time to settle this once and for all! Who's the superior character? 
+                        Let's break it down category by category in this scientific* analysis!
+                    </p>
+                    <p class="text-sm text-neutral-light italic">*Scientific accuracy not guaranteed. Results may contain traces of bias and humor.</p>
+                    
+                    <!-- Battle Ring -->
+                    <div class="flex justify-center items-center space-x-8 md:space-x-16 my-12">
+                        <div class="text-center relative">
+                            <div class="w-32 h-32 md:w-40 md:h-40 bg-peppa-pink rounded-full flex items-center justify-center animate-float hover-lift cursor-pointer battle-glow">
+                                <img src="../images/peppa.png" alt="Peppa Pig" class="w-24 h-24 md:w-32 md:h-32 object-contain">
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-peppa-pink mt-4">Peppa "Mudslinger" Pig</h3>
+                            <div class="bg-peppa-light text-white px-3 py-1 rounded-full text-sm mt-2">👑 British Champion</div>
+                        </div>
+                        
+                        <div class="text-5xl md:text-7xl font-bold text-red-500 animate-wiggle">
+                            ⚔️
+                        </div>
+                        
+                        <div class="text-center relative">
+                            <div class="w-32 h-32 md:w-40 md:h-40 bg-eevee-brown rounded-full flex items-center justify-center animate-float hover-lift cursor-pointer battle-glow" style="animation-delay: -3s;">
+                                <img src="../images/eevee.png" alt="Eevee" class="w-24 h-24 md:w-32 md:h-32 object-contain">
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-eevee-brown mt-4">Eevee "Shape-shifter"</h3>
+                            <div class="bg-eevee-light text-white px-3 py-1 rounded-full text-sm mt-2">🏆 Evolution Master</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Categories -->
+        <section class="py-20 bg-white/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-center text-neutral-dark mb-16">
+                    🔬 Scientific Battle Analysis
+                </h2>
+                
+                <!-- Category 1: Combat Skills -->
+                <div class="mb-16 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-red-500 to-orange-500 p-6">
+                        <h3 class="text-2xl font-heading font-bold text-white flex items-center">
+                            🥊 Combat Skills & Battle Prowess
+                        </h3>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-peppa-pink rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/peppa.png" alt="Peppa" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-peppa-pink mb-3">Peppa's Arsenal</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>🦶 <strong>Muddy Puddle Stomp:</strong> Devastating splash damage</li>
+                                    <li>🐷 <strong>Snort of Intimidation:</strong> Psychological warfare</li>
+                                    <li>👨‍👩‍👧‍👦 <strong>Family Backup:</strong> Can summon entire Pig clan</li>
+                                    <li>🚗 <strong>Daddy Pig's Car:</strong> Unreliable but hilarious transport</li>
+                                    <li>📚 <strong>Bossy Commentary:</strong> Confuses enemies with criticism</li>
+                                </ul>
+                                <div class="mt-4 bg-peppa-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-peppa-pink">Combat Score: 6/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Surprisingly effective for a 4-year-old"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-eevee-brown rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/eevee.png" alt="Eevee" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-eevee-brown mb-3">Eevee's Arsenal</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>⚡ <strong>Swift Attack:</strong> Never misses (literally impossible)</li>
+                                    <li>🔄 <strong>Adaptability:</strong> Changes strategy mid-battle</li>
+                                    <li>🌟 <strong>Evolution Potential:</strong> 8 different final forms</li>
+                                    <li>😍 <strong>Cute Appeal:</strong> Enemies hesitate to attack</li>
+                                    <li>🎯 <strong>Tackle & Bite:</strong> Classic Pokémon moves</li>
+                                </ul>
+                                <div class="mt-4 bg-eevee-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-eevee-brown">Combat Score: 8/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Professional fighter with type advantages"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8 p-4 bg-eevee-light/10 rounded-lg border-2 border-eevee-brown">
+                            <h5 class="font-bold text-eevee-brown">🏆 WINNER: EEVEE</h5>
+                            <p class="text-sm text-neutral-medium">"Sorry Peppa, but professional combat training beats tantrum throwing!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Cultural Impact -->
+                <div class="mb-16 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-6">
+                        <h3 class="text-2xl font-heading font-bold text-white flex items-center">
+                            🌍 Cultural Impact & Global Domination
+                        </h3>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-peppa-pink rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/peppa_family.png" alt="Peppa Family" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-peppa-pink mb-3">Peppa's Empire</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>📺 <strong>TV Show:</strong> 400+ episodes across 7 seasons</li>
+                                    <li>🎬 <strong>Movies:</strong> Multiple theatrical releases</li>
+                                    <li>🎢 <strong>Theme Parks:</strong> Actual Peppa Pig World exists!</li>
+                                    <li>🧸 <strong>Merchandise:</strong> Parents worldwide cry at toy store prices</li>
+                                    <li>👨‍👩‍👧‍👦 <strong>Family Values:</strong> Teaching kids to jump in muddy puddles</li>
+                                </ul>
+                                <div class="mt-4 bg-peppa-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-peppa-pink">Cultural Score: 9/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Has conquered every living room in the UK"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-eevee-brown rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/eeveelutions.png" alt="Eeveelutions" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-eevee-brown mb-3">Eevee's Legacy</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>🎮 <strong>Video Games:</strong> 25+ years of Pokémon games</li>
+                                    <li>📱 <strong>Mobile Apps:</strong> Pokémon GO global phenomenon</li>
+                                    <li>🃏 <strong>Trading Cards:</strong> Multi-billion dollar industry</li>
+                                    <li>🎭 <strong>Competitive Scene:</strong> Professional esports tournaments</li>
+                                    <li>🧬 <strong>Evolution Tree:</strong> Spawned entire evolution mechanic</li>
+                                </ul>
+                                <div class="mt-4 bg-eevee-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-eevee-brown">Cultural Score: 10/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Literally shaped modern gaming culture"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8 p-4 bg-eevee-light/10 rounded-lg border-2 border-eevee-brown">
+                            <h5 class="font-bold text-eevee-brown">🏆 WINNER: EEVEE</h5>
+                            <p class="text-sm text-neutral-medium">"25 years of global domination beats 20 years of British puddle jumping!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Personality & Likability -->
+                <div class="mb-16 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-yellow-500 to-green-500 p-6">
+                        <h3 class="text-2xl font-heading font-bold text-white flex items-center">
+                            😊 Personality & Likability Contest
+                        </h3>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-peppa-pink rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/peppa.png" alt="Peppa" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-peppa-pink mb-3">Peppa's Personality</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>😤 <strong>Bossy:</strong> Will tell you exactly what you're doing wrong</li>
+                                    <li>😂 <strong>Cheeky:</strong> Laughs at Daddy Pig's expense (relatable)</li>
+                                    <li>👑 <strong>Confident:</strong> Never doubts she's right (even when wrong)</li>
+                                    <li>🐸 <strong>Judgmental:</strong> "Pedro Pony is wearing glasses!"</li>
+                                    <li>❤️ <strong>Loving:</strong> Genuinely cares about family and friends</li>
+                                </ul>
+                                <div class="mt-4 bg-peppa-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-peppa-pink">Personality Score: 7/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Lovable but would definitely steal your lunch money"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-eevee-brown rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/eevee_with_flowers.png" alt="Eevee with flowers" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-eevee-brown mb-3">Eevee's Personality</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>🥰 <strong>Adorable:</strong> Scientifically proven cute factor</li>
+                                    <li>🤝 <strong>Loyal:</strong> Best friend material for life</li>
+                                    <li>🧠 <strong>Adaptable:</strong> Goes with the flow, handles change well</li>
+                                    <li>🌟 <strong>Ambitious:</strong> Constantly evolving and improving</li>
+                                    <li>😌 <strong>Humble:</strong> Doesn't brag about having 8+ evolution forms</li>
+                                </ul>
+                                <div class="mt-4 bg-eevee-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-eevee-brown">Personality Score: 9/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Perfect companion, would definitely share their Pokéfood"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8 p-4 bg-eevee-light/10 rounded-lg border-2 border-eevee-brown">
+                            <h5 class="font-bold text-eevee-brown">🏆 WINNER: EEVEE</h5>
+                            <p class="text-sm text-neutral-medium">"While Peppa's sassiness is iconic, Eevee's wholesome loyalty wins hearts!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Special Abilities -->
+                <div class="mb-16 bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-teal-500 p-6">
+                        <h3 class="text-2xl font-heading font-bold text-white flex items-center">
+                            ✨ Special Abilities & Unique Powers
+                        </h3>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-peppa-pink rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/peppa.png" alt="Peppa" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-peppa-pink mb-3">Peppa's Powers</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>🎯 <strong>Muddy Puddle Detection:</strong> Can find puddles from miles away</li>
+                                    <li>📞 <strong>Grandpa Pig Summoning:</strong> Calls for garden expertise</li>
+                                    <li>🚗 <strong>Car Breaking:</strong> Daddy Pig's car always breaks when she's around</li>
+                                    <li>🎭 <strong>Adult Embarrassment:</strong> Makes grown-ups look silly effortlessly</li>
+                                    <li>⏰ <strong>Time Manipulation:</strong> 5-minute episodes feel like hours</li>
+                                </ul>
+                                <div class="mt-4 bg-peppa-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-peppa-pink">Powers Score: 6/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Useful for everyday life, useless in actual combat"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-eevee-brown rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <img src="../images/eevee.png" alt="Eevee" class="w-14 h-14 object-contain">
+                                </div>
+                                <h4 class="text-xl font-bold text-eevee-brown mb-3">Eevee's Powers</h4>
+                                <ul class="text-left space-y-2 text-neutral-medium">
+                                    <li>🔄 <strong>Evolution Mastery:</strong> Can become 8 different powerful forms</li>
+                                    <li>🧬 <strong>Genetic Instability:</strong> Adapts to any environment</li>
+                                    <li>⚡ <strong>Type Versatility:</strong> Fire, Water, Electric, Psychic, etc.</li>
+                                    <li>🎯 <strong>Swift Attack:</strong> Guaranteed hit move (can't miss)</li>
+                                    <li>💫 <strong>Hidden Abilities:</strong> Anticipation and Adaptability</li>
+                                </ul>
+                                <div class="mt-4 bg-eevee-light/20 p-3 rounded-lg">
+                                    <span class="text-lg font-bold text-eevee-brown">Powers Score: 10/10</span>
+                                    <p class="text-sm text-neutral-medium mt-1">"Literally game-breaking evolution mechanics"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8 p-4 bg-eevee-light/10 rounded-lg border-2 border-eevee-brown">
+                            <h5 class="font-bold text-eevee-brown">🏆 WINNER: EEVEE</h5>
+                            <p class="text-sm text-neutral-medium">"8 evolution forms vs muddy puddle expertise? Come on, Peppa!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Tally -->
+                <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-2xl shadow-2xl p-8 text-center">
+                    <h3 class="text-3xl font-heading font-bold text-white mb-6">
+                        🏆 FINAL BATTLE RESULTS 🏆
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white/20 rounded-xl p-6">
+                            <img src="../images/peppa.png" alt="Peppa" class="w-16 h-16 mx-auto mb-4 object-contain">
+                            <h4 class="text-xl font-bold text-white mb-2">Peppa "The Muddy Menace" Pig</h4>
+                            <div class="space-y-2 text-white/90">
+                                <p>Combat: 6/10</p>
+                                <p>Cultural Impact: 9/10</p>
+                                <p>Personality: 7/10</p>
+                                <p>Powers: 6/10</p>
+                            </div>
+                            <div class="text-2xl font-bold text-white mt-4 border-t-2 border-white/30 pt-4">
+                                TOTAL: 28/40
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/20 rounded-xl p-6 winner-glow">
+                            <img src="../images/eevee.png" alt="Eevee" class="w-16 h-16 mx-auto mb-4 object-contain">
+                            <h4 class="text-xl font-bold text-white mb-2">Eevee "The Evolution Emperor"</h4>
+                            <div class="space-y-2 text-white/90">
+                                <p>Combat: 8/10</p>
+                                <p>Cultural Impact: 10/10</p>
+                                <p>Personality: 9/10</p>
+                                <p>Powers: 10/10</p>
+                            </div>
+                            <div class="text-2xl font-bold text-white mt-4 border-t-2 border-white/30 pt-4">
+                                TOTAL: 37/40
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-neutral-dark">
+                        <h4 class="text-2xl font-heading font-bold text-eevee-brown mb-4">
+                            🎉 THE WINNER: EEVEE! 🎉
+                        </h4>
+                        <p class="text-lg mb-4">
+                            In a surprising turn of events... just kidding, this wasn't surprising at all! 
+                        </p>
+                        <p class="text-neutral-medium mb-4">
+                            While Peppa Pig dominated British television and taught an entire generation that jumping in muddy puddles is a valid life choice, 
+                            Eevee's versatility, combat prowess, and global gaming influence make it the ultimate character champion.
+                        </p>
+                        <div class="bg-eevee-light/20 p-4 rounded-lg border-l-4 border-eevee-brown">
+                            <p class="text-sm italic">
+                                <strong>Scientific Conclusion:</strong> Eevee wins through superior adaptability, combat skills, and the power to literally evolve into whatever the situation demands. 
+                                Peppa might rule the playground, but Eevee rules the battlefield! 🏆
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Facts -->
+        <section class="py-20 bg-white/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-heading font-bold text-center text-neutral-dark mb-16">
+                    🤯 Mind-Blowing Battle Facts
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
+                        <div class="text-4xl mb-4">🐷</div>
+                        <h3 class="text-lg font-bold text-peppa-pink mb-2">Peppa's Secret</h3>
+                        <p class="text-neutral-medium">Peppa Pig is exactly 7 feet 1 inch tall according to the internet, making her a literal giant among preschoolers!</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
+                        <div class="text-4xl mb-4">🧬</div>
+                        <h3 class="text-lg font-bold text-eevee-brown mb-2">Evolution Mystery</h3>
+                        <p class="text-neutral-medium">Eevee's genetic code is so unstable that it can evolve by simply being happy, which is honestly goals.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center">
+                        <div class="text-4xl mb-4">💰</div>
+                        <h3 class="text-lg font-bold text-accent-blue mb-2">Economic Impact</h3>
+                        <p class="text-neutral-medium">Both characters have generated billions in revenue, proving that cute animals are humanity's weakness!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-dark text-white py-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 opacity-5">
+            <img src="../images/eevee_with_flowers.png" alt="Footer Decoration" class="w-full h-full object-contain">
+        </div>
+        <div class="absolute bottom-0 left-0 w-20 h-20 opacity-5">
+            <img src="../images/peppa.png" alt="Footer Decoration" class="w-full h-full object-contain">
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h3 class="text-2xl font-heading font-bold gradient-text mb-4">Battle Concluded!</h3>
+                <p class="text-neutral-light mb-6">
+                    Think we got it wrong? Challenge our findings in the 
+                    <a href="../pages/battle-simulator.html" class="text-accent-blue hover:text-accent-teal underline">Battle Simulator</a>!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="../index.html" class="bg-peppa-pink hover:bg-peppa-light px-6 py-2 rounded-lg transition-colors">
+                        Back to Home
+                    </a>
+                    <a href="battle-simulator.html" class="bg-eevee-brown hover:bg-eevee-light px-6 py-2 rounded-lg transition-colors">
+                        Battle Simulator
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-medium mt-8 pt-8 text-center">
+                <p class="text-neutral-light text-sm">
+                    &copy; 2024 Peppa VS Eevee | Results based on highly scientific* analysis | *Not actually scientific
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Fun interaction - clicking on character images
+        document.querySelectorAll('img[alt*="Peppa"], img[alt*="Eevee"]').forEach(img => {
+            img.addEventListener('click', function() {
+                // Add a fun shake animation
+                this.style.animation = 'wiggle 0.5s ease-in-out';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 500);
+                
+                // Show a random battle cry
+                const peppaQuotes = ['Oink oink!', 'I love muddy puddles!', 'Silly Daddy Pig!'];
+                const eeveeQuotes = ['Eevee!', '*Evolution sounds*', 'Vee vee!'];
+                
+                const quotes = this.alt.includes('Peppa') ? peppaQuotes : eeveeQuotes;
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                
+                // Create floating text
+                const floatingText = document.createElement('div');
+                floatingText.textContent = randomQuote;
+                floatingText.className = 'absolute bg-white px-3 py-1 rounded-lg shadow-lg text-sm font-bold pointer-events-none z-50';
+                floatingText.style.top = '-40px';
+                floatingText.style.left = '50%';
+                floatingText.style.transform = 'translateX(-50%)';
+                floatingText.style.animation = 'float 2s ease-out forwards';
+                
+                this.parentElement.style.position = 'relative';
+                this.parentElement.appendChild(floatingText);
+                
+                setTimeout(() => floatingText.remove(), 2000);
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.hover-lift').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 
